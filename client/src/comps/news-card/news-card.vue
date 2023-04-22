@@ -89,7 +89,8 @@ export default defineComponent({
 .news-card-wrapper {
 	background-color: #fff;
 	padding: 30upx;
-	margin: 20upx 0;
+	box-sizing: border-box;
+	border-bottom: 1px solid #eee;
 	.card-header {
 		display: flex;
 		align-items: center;

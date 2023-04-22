@@ -91,7 +91,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .avatar-wrapper {
-	padding: 40upx;
+	padding: 30upx;
 	background-color: #fff;
 }
 .user-data-grid {

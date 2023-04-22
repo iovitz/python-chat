@@ -20,3 +20,9 @@ interface Uni {
 interface ButtonHTMLAttributes {
   type?: string
 }
+
+declare global {
+  interface Window {
+      themeColor: string;
+  }
+}

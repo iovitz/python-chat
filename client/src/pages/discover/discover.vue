@@ -1,20 +1,22 @@
 <template>
-	<scroll-view
-		scroll-y="true"
-		style="height: 100%"
-		refresher-enabled
-		@scrolltolower="handleLoadMore"
-		refresher-background="#eee"
-		:refresher-triggered="refreshFlag"
-		:refresher-threshold="50"
-		@refresherrefresh="handleRefresh"
-	>
-		<view>
-			<view class="news-card-list">
-				<news-card v-for="i in 10" :key="i"></news-card>
+	<view class="with-nav-bar">
+		<scroll-view
+			scroll-y="true"
+			:style="`height: ${swiperHeight}px`"
+			refresher-enabled
+			@scrolltolower="handleLoadMore"
+			refresher-background="#eee"
+			:refresher-triggered="refreshFlag"
+			:refresher-threshold="50"
+			@refresherrefresh="handleRefresh"
+		>
+			<view>
+				<view class="news-card-list">
+					<news-card v-for="i in 10" :key="i"></news-card>
+				</view>
 			</view>
-		</view>
-	</scroll-view>
+		</scroll-view>
+	</view>
 </template>
 
 <script lang="ts">
@@ -33,7 +35,15 @@ export default defineComponent({
 	data() {
 		return {
 			refreshFlag: false,
+			swiperHeight: 0,
 		};
+	},
+	mounted() {
+		uni.getSystemInfo({
+			success: (res) => {
+				this.swiperHeight = res.windowHeight;
+			},
+		});
 	},
 	methods: {
 		handleRefresh() {
@@ -51,4 +61,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.with-nav-bar {
+}
+</style>

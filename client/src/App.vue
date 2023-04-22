@@ -14,13 +14,13 @@ onHide(() => {
 
 <!-- 这里的style不能设置scoped -->
 <style lang="scss">
-@import '@/common/icon/iconfont.css';
+@import '@/static/icon/iconfont.css';
 @import '@/common/uni.css';
 @import '@/common/uni.scss';
 page {
 	height: 100%;
 	background-color: #f0f2f5;
-	font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC,
-		WenQuanYi Micro Hei, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Microsoft YaHei,
+		Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei, sans-serif;
 }
 </style>
