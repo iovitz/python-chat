@@ -14,9 +14,10 @@ onHide(() => {
 
 <!-- 这里的style不能设置scoped -->
 <style lang="scss">
+@import '@/common/uni.scss';
 @import '@/static/icon/iconfont.css';
 @import '@/common/uni.css';
-@import '@/common/uni.scss';
+
 page {
 	height: 100%;
 	background-color: #f0f2f5;

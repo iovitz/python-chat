@@ -1,5 +1,4 @@
 /// <reference types="vite/client" />
-import vue from 'vue'
 
 declare module '*.vue' {
   import { DefineComponent } from 'vue'
@@ -8,21 +7,10 @@ declare module '*.vue' {
   export default component
 }
 
-declare module 'uview-plus' {
-  const plugin: any
-  export default plugin
-}
-
 interface Uni {
   $u: any
 }
 
 interface ButtonHTMLAttributes {
   type?: string
-}
-
-declare global {
-  interface Window {
-      themeColor: string;
-  }
 }

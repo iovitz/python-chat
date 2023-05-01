@@ -1,22 +1,18 @@
 <template>
-	<view class="with-nav-bar">
-		<scroll-view
-			scroll-y="true"
-			:style="`height: ${swiperHeight}px`"
-			refresher-enabled
-			@scrolltolower="handleLoadMore"
-			refresher-background="#eee"
-			:refresher-triggered="refreshFlag"
-			:refresher-threshold="50"
-			@refresherrefresh="handleRefresh"
-		>
-			<view>
-				<view class="news-card-list">
-					<news-card v-for="i in 10" :key="i"></news-card>
-				</view>
-			</view>
-		</scroll-view>
-	</view>
+	<scroll-view
+		scroll-y="true"
+		:style="`height: ${swiperHeight}px`"
+		refresher-enabled
+		@scrolltolower="handleLoadMore"
+		refresher-background="#eee"
+		:refresher-triggered="refreshFlag"
+		:refresher-threshold="50"
+		@refresherrefresh="handleRefresh"
+	>
+		<view class="news-card-list">
+			<news-card v-for="i in 10" :key="i"></news-card>
+		</view>
+	</scroll-view>
 </template>
 
 <script lang="ts">
@@ -38,10 +34,16 @@ export default defineComponent({
 			swiperHeight: 0,
 		};
 	},
+	onNavigationBarButtonTap(e) {
+		uni.navigateTo({
+			url: '/pages/publish/publish',
+		});
+	},
 	mounted() {
 		uni.getSystemInfo({
 			success: (res) => {
 				this.swiperHeight = res.windowHeight;
+				console.log(this.swiperHeight);
 			},
 		});
 	},
@@ -61,7 +63,4 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
-.with-nav-bar {
-}
-</style>
+<style lang="scss" scoped></style>
